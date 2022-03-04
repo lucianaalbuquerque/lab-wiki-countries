@@ -3,14 +3,14 @@ import { useParams } from 'react-router-dom';
 
 function CountryDetails(props) {
   const { id } = useParams();
-  const { countries } = props;
+  const { countries } = props; 
 
   const countryFound = countries.find((oneCountry) => {
     return oneCountry.alpha3Code === id;
   });
 
   return (
-    <div className="col-7">
+    <>
     <img src={`https://flagpedia.net/data/flags/icon/72x54/${countryFound.alpha2Code.toLowerCase()}.png`} alt='' />
             <h1>{countryFound.name.official}</h1>
             <table className="table">
@@ -42,7 +42,7 @@ function CountryDetails(props) {
                 </tr>
               </tbody>
             </table>
-          </div>
+          </>
   )
 }
 
